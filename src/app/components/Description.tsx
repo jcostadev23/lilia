@@ -5,7 +5,7 @@ interface Props {
 }
 const Description: React.FC<Props> = (props) => {
   return (
-    <p className="text-lg text-gray-800 font-semibold text-center p-6 leading-7">
+    <p className="text-base sm:text-lg text-slate-200 font-medium text-center p-12 leading-relaxed">
       ola estou aki
       {props.description}
     </p>

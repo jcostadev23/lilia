@@ -15,20 +15,19 @@ const SlidePicture = () => {
   }, []);
 
   return (
-    <div className="relative w-full overflow-hidden ml-10">
+    <div className="relative w-full overflow-hidden">
       <div
         className="flex transition-transform ease-in-out duration-1000"
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
       >
         {allData.map((data) => (
           <div className="flex-shrink-0 w-full" key={data.id}>
-            <div key={data.id} className="aspect-w-3 aspect-h-4">
+            <div key={data.id} className="aspect-[1/1]">
               <Image
-                className="transition-transform transform-origin-start opacity-90 transform 
-            rounded mt-4"
+                className="transition-transform opacity-90 rounded-3xl border border-white/10 bg-slate-950/40 object-contain shadow-[0_30px_80px_rgba(15,23,42,0.6)]"
                 src={data.image1}
-                width={200}
-                height={250}
+                width={640}
+                height={640}
                 alt={"work picture"}
               />
             </div>

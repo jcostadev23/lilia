@@ -18,11 +18,10 @@ const Loader: React.FC<Props> = ({ size = "large" }) => {
 
   return (
     <div className="flex items-center justify-center">
-      <div className={`loader ${getSizeClassName()}`}>
-        <div className="relative w-full h-full transform rotate-45 mt-20">
-          <div className="absolute w-full h-full bg-pink-500 animate-ping rounded-full"></div>
-          <div className="absolute w-2/5 h-2/5 bg-pink-200 rounded-full"></div>
-        </div>
+      <div className={`relative ${getSizeClassName()}`}>
+        <div className="absolute inset-0 rounded-full border border-pink-400/40 animate-spin"></div>
+        <div className="absolute inset-2 rounded-full bg-gradient-to-br from-pink-400/80 to-cyan-400/60 blur-sm"></div>
+        <div className="absolute inset-4 rounded-full bg-slate-950"></div>
       </div>
     </div>
   );
