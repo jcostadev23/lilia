@@ -1,5 +1,5 @@
 import MainCard from "./card/main-card";
-import ProfilePicture from "./Myprofilepic";
+import ProfilePicture from "./Profilepic";
 import MainSections from "./sections/main-sections";
 
 const MainPage = () => {

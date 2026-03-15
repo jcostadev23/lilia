@@ -1,4 +1,4 @@
-import ProfilePicture from "./Myprofilepic";
+import ProfilePicture from "../Profilepic";
 
 const MyCard = () => {
   return (
