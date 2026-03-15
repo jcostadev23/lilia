@@ -1,9 +1,10 @@
 import ProfilePicture from "../Profilepic";
+import MainSections from "../sections/main-sections";
 
 const MyCard = () => {
   return (
     <div className="max-w-6xl mx-auto px-8 py-16 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      <section className="glass-panel neon-border rounded-3xl p-10">
+      <MainSections className="glass-panel neon-border">
         <h1 className="font-display text-4xl text-white">
           Redefinindo Beleza: Descubra o Poder da Maquiagem em Nosso Mundo de
           Cores e Estilo
@@ -15,7 +16,7 @@ const MyCard = () => {
           complementa a sua beleza natural e adiciona um toque de elegância à
           sua vida cotidiana.
         </p>
-      </section>
+      </MainSections>
       <div className="flex justify-center">
         <ProfilePicture src={"/images/lilia/main.jpg"} alt={"Lilia Dionisio"} />
       </div>
