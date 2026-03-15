@@ -2,7 +2,7 @@ type Props = {
   children: any;
   backgroundImage?: string;
 };
-const BioCard: React.FC<Props> = ({ children, backgroundImage }) => {
+const NeonCard: React.FC<Props> = ({ children, backgroundImage }) => {
   return (
     <div
       className="glass-card neon-border rounded-3xl p-6 md:p-10 relative overflow-hidden group transition duration-500 hover:-translate-y-1 h-full flex flex-col"
@@ -22,4 +22,4 @@ const BioCard: React.FC<Props> = ({ children, backgroundImage }) => {
   );
 };
 
-export default BioCard;
+export default NeonCard;
