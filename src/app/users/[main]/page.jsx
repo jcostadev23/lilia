@@ -1,7 +1,7 @@
 import Description from "@/app/components/Description";
 import Image from "next/image";
-import SpecialCard from "../../components/SpecialCard";
 import allData from "../../storage/allData";
+import NeonCard from "@/app/components/card/neon-card";
 
 export default function SelectedWork({ params }) {
   const selectedId = allData.find((item) => item.id == params.main);
@@ -10,14 +10,14 @@ export default function SelectedWork({ params }) {
     <>
       <div className="max-w-6xl mx-auto px-8 py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 items-center">
         {selectedId?.image2.map((item) => (
-          <SpecialCard key={item}>
+          <NeonCard key={item}>
             <img
               className="object-contain w-full aspect-[1/1] rounded-2xl border border-white/10 bg-slate-950/40 shadow-[0_24px_50px_rgba(15,23,42,0.6)]"
               src={item}
               alt="personal picture"
             />
             <Description description={selectedId.description} />
-          </SpecialCard>
+          </NeonCard>
         ))}
       </div>
       <div className="max-w-6xl mx-auto px-8 pb-16">

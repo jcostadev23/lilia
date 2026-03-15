@@ -1,8 +1,8 @@
 import { Sora, Unbounded } from "next/font/google";
 import React from "react";
 import Footer from "./components/Footer";
-import Navbar from "./components/Navbar";
 import "./globals.css";
+import Navbar from "./components/navbar";
 
 const sora = Sora({ subsets: ["latin"], variable: "--font-body", display: "swap" });
 const unbounded = Unbounded({
