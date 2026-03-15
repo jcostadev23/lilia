@@ -12,8 +12,6 @@ import styles from "./planetMenu.module.css";
 const PlanetMenu: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  console.log("backgroundColor");
-
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
@@ -26,29 +24,35 @@ const PlanetMenu: React.FC = () => {
       >
         {" "}
       </div>
-      <Image src="/images/logo.jpg" alt="logo" height={75} width={75} />
+      <Image
+        className="rounded-full border border-white/20 shadow-[0_0_30px_rgba(236,72,153,0.35)]"
+        src="/images/logo.jpg"
+        alt="logo"
+        height={70}
+        width={70}
+      />
       <li style={{ "--i": 0 } as React.CSSProperties}>
-        <a className="flex gap-2" href="/">
+        <a className="flex gap-4" href="/">
           <HomeIconOutlined fontSize="medium" />
         </a>
       </li>
       <li style={{ "--i": 1 } as React.CSSProperties}>
-        <a className="flex gap-2" href="/users/works">
+        <a className="flex gap-4" href="/users/works">
           <PeopleOutlineOutlinedIcon fontSize="medium" />
         </a>
       </li>
       <li style={{ "--i": 2 } as React.CSSProperties}>
-        <a className="flex gap-2" href="/users">
+        <a className="flex gap-4" href="/users">
           <InfoOutlinedIcon fontSize="medium" />
         </a>
       </li>
       <li style={{ "--i": 3 } as React.CSSProperties}>
-        <a className="flex gap-2" href="/users">
+        <a className="flex gap-4" href="/users">
           <Person2OutlinedIcon fontSize="medium" />
         </a>
       </li>
       <li style={{ "--i": 4 } as React.CSSProperties}>
-        <a className="flex gap-2" href="/error">
+        <a className="flex gap-4" href="/error">
           <SettingsOutlinedIcon fontSize="medium" />
         </a>
       </li>

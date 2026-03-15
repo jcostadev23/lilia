@@ -8,23 +8,26 @@ export default function SelectedWork({ params }) {
 
   return (
     <>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 m-10 items-center">
+      <div className="max-w-6xl mx-auto px-8 py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 items-center">
         {selectedId?.image2.map((item) => (
           <SpecialCard key={item}>
             <img
-              className="object-fit w-full h-full rounded-md"
+              className="object-contain w-full aspect-[1/1] rounded-2xl border border-white/10 bg-slate-950/40 shadow-[0_24px_50px_rgba(15,23,42,0.6)]"
               src={item}
               alt="personal picture"
-              style={{ maxWidth: "300px", maxHeight: "300px" }}
             />
             <Description description={selectedId.description} />
           </SpecialCard>
         ))}
       </div>
-      <a className="font-bold ml-4 mt-10" href={`/users/works`}>
-        {" "}
-        Meus Trabalhos, {"\u2192"} &hearts;{" "}
-      </a>
+      <div className="max-w-6xl mx-auto px-8 pb-16">
+        <a
+          className="inline-flex px-6 py-3 rounded-full border border-white/20 text-white/70 hover:text-white hover:border-white/60 transition"
+          href={`/users/works`}
+        >
+          Meus Trabalhos, {"\u2192"}
+        </a>
+      </div>
     </>
   );
 }

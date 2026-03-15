@@ -80,7 +80,15 @@ export default function DropDownMenu() {
                 placement === "bottom-start" ? "left top" : "left bottom",
             }}
           >
-            <Paper>
+            <Paper
+              sx={{
+                backgroundColor: "rgba(15, 23, 42, 0.95)",
+                color: "#fff",
+                border: "1px solid rgba(255,255,255,0.1)",
+                boxShadow: "0 20px 60px rgba(15,23,42,0.55)",
+                backdropFilter: "blur(16px)",
+              }}
+            >
               <ClickAwayListener onClickAway={handleClose}>
                 <MenuList
                   autoFocusItem={open}
@@ -88,31 +96,31 @@ export default function DropDownMenu() {
                   aria-labelledby="composition-button"
                   onKeyDown={handleListKeyDown}
                 >
-                  <MenuItem onClick={handleClose}>
-                    <a className="flex gap-2" href="/">
+                  <MenuItem onClick={handleClose} sx={{ gap: 1 }}>
+                    <a className="flex gap-4" href="/">
                       <HomeIconOutlined fontSize="small" />
                       Home
                     </a>
                   </MenuItem>
-                  <MenuItem onClick={handleClose}>
-                    <a className="flex gap-2" href="/users/works">
+                  <MenuItem onClick={handleClose} sx={{ gap: 1 }}>
+                    <a className="flex gap-4" href="/users/works">
                       <PeopleOutlineOutlinedIcon />
                       Trabalhos
                     </a>
                   </MenuItem>
-                  <MenuItem onClick={handleClose}>
-                    <a className="flex gap-2" href="/users">
+                  <MenuItem onClick={handleClose} sx={{ gap: 1 }}>
+                    <a className="flex gap-4" href="/users">
                       <InfoOutlinedIcon />
                       About
                     </a>
                   </MenuItem>
-                  <MenuItem onClick={handleClose}>
-                    <a className="flex gap-2" href="/users">
+                  <MenuItem onClick={handleClose} sx={{ gap: 1 }}>
+                    <a className="flex gap-4" href="/users">
                       <Person2OutlinedIcon /> My account
                     </a>
                   </MenuItem>
-                  <MenuItem onClick={handleClose}>
-                    <a className="flex gap-2" href="/error">
+                  <MenuItem onClick={handleClose} sx={{ gap: 1 }}>
+                    <a className="flex gap-4" href="/error">
                       <SettingsOutlinedIcon /> Settings
                     </a>
                   </MenuItem>

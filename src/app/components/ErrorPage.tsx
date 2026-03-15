@@ -3,12 +3,10 @@ import Loader from "./Loader";
 
 const ErrorPage = () => {
   return (
-    <div className="error-page m-20">
-      <h2 className="flex text-xl text-red-600 font-bold items-center justify-center">
-        Error 404...
-      </h2>
-      <p className="flex text-lg text-red-400 font-bold items-center justify-center">
-        Page in construction...
+    <div className="min-h-[60vh] flex flex-col items-center justify-center text-center px-8">
+      <h2 className="font-display text-4xl text-white text-glow">Error 404</h2>
+      <p className="text-sm uppercase tracking-[0.35em] text-white/60 mt-3">
+        Page in construction
       </p>
       <Loader />
     </div>
