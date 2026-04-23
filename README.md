@@ -8,8 +8,8 @@ A luxurious, dark-themed portfolio site for makeup artist **Lilia Dionísio**, b
 
 | Page | Route | Description |
 |------|-------|-------------|
-| Home | `/` | Hero section with CTA buttons and featured content cards |
-| Portfolio | `/users/works` | Responsive 3-column gallery grid of all makeup works |
+| Home | `/` | Hero section with CTA buttons, stats bar (clients · experience · satisfaction), and featured content cards |
+| Portfolio | `/users/works` | Responsive 3-column gallery grid with 3:4 cover images, cinematic gradient overlay, and hover info panel |
 | Work Detail | `/users/works/[id]` | Dynamic page per work with image gallery and description |
 | About | `/users` | Artist bio with personal photos and makeup philosophy |
 | Error | `/error` | Fallback page with animated loader and carousel |
@@ -205,11 +205,16 @@ Defined in [`src/app/globals.css`](src/app/globals.css) via Tailwind's `@layer c
 |-------|--------|
 | `.glass-panel` | Glassmorphism with gradient + backdrop blur |
 | `.glass-card` | Glass card variant (lighter) |
-| `.neon-border` | Animated neon glow border (pink/cyan) |
+| `.neon-border` | Animated neon-pulse glow border (pink/cyan, `neon-pulse` keyframe) |
 | `.tilt-card` | 3D perspective hover tilt |
 | `.bg-aurora` | Radial + linear aurora gradient background |
-| `.text-glow` | Pink text shadow glow |
-| `.orb` | Animated blurred orb sphere |
+| `.text-glow` | Pink/cyan text shadow glow |
+| `.text-gradient` | Pink → fuchsia → violet gradient text fill |
+| `.dot-grid` | Subtle dot-pattern overlay (40px grid, white @ 5.5% opacity) |
+| `.orb` | Blurred floating orb (`blur(80px)`, `orb-float` keyframe) |
+| `.orb--pink` | Pink variant of `.orb` |
+| `.orb--cyan` | Cyan variant of `.orb` |
+| `.orb--purple` | Purple variant of `.orb` (used in MainPage hero) |
 
 ### Fonts
 
@@ -264,7 +269,7 @@ Thin wrapper around `next/image` with consistent styling:
 </NeonCard>
 ```
 
-Renders a glass card with the neon border glow and an optional CSS `background-image` overlay.
+Renders a glass card with the animated `.neon-border` glow. When `backgroundImage` is provided, two overlay layers are rendered: a dark cinematic gradient (always visible) and a pink/purple/cyan tint that fades in on hover (`group-hover:opacity-100`).
 
 ### `Loader`
 
@@ -279,12 +284,20 @@ Animated nested-ring spinner with gradient glow. Used on error and loading state
 ## Navigation
 
 The sticky `Navbar` includes:
-- Logo + "Lilia Makeup" brand link (→ `/`)
-- Social icons with hover brand colors:
-  - Facebook → `hover:text-blue-600`
-  - Instagram → `hover:text-pink-500`
+- Logo + "Lilia Makeup" / "Artistry Studio" brand link (→ `/`)
+- Horizontal nav links (hidden on mobile): Início · Portfólio · Sobre
+- Social icons (hidden on small screens) with hover brand colors:
+  - Facebook → `hover:text-blue-400`
+  - Instagram → `hover:text-pink-400`
   - TikTok → `hover:text-white`
-  - WhatsApp → `hover:text-green-400`
+  - WhatsApp → `hover:text-emerald-400`
+- **"Reservar" CTA button** (hidden on mobile) — links directly to WhatsApp booking
+
+The `Footer` is a 3-column grid:
+- **Brand** — tagline + short description
+- **Navegação** — links to Início, Portfólio, Sobre
+- **Contacto** — social icon set + "Fazer Marcação" WhatsApp pill button
+- Bottom bar with copyright and credit line
 
 ---
 
