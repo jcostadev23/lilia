@@ -39,6 +39,7 @@ const MainPage = () => {
           <ProfilePicture
             src={"/images/lilia/main.jpg"}
             alt={"Lilia Dionisio"}
+            priority
           />
         </div>
       </div>
