@@ -3,6 +3,37 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes neon-pulse {
+  0%, 100% {
+    box-shadow:
+      0 0 0 1px rgba(236, 72, 153, 0.25),
+      0 0 20px rgba(236, 72, 153, 0.12),
+      0 0 60px rgba(56, 189, 248, 0.06);
+  }
+  50% {
+    box-shadow:
+      0 0 0 1px rgba(236, 72, 153, 0.65),
+      0 0 40px rgba(236, 72, 153, 0.35),
+      0 0 100px rgba(56, 189, 248, 0.18);
+  }
+}
+
+@keyframes orb-float {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+    opacity: 0.28;
+  }
+  50% {
+    transform: translateY(-40px) scale(1.12);
+    opacity: 0.45;
+  }
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
 @layer base {
   html {
     color-scheme: dark;
@@ -26,34 +57,32 @@
   .glass-panel {
     background: linear-gradient(
       140deg,
-      rgba(15, 23, 42, 0.75),
-      rgba(15, 23, 42, 0.35)
+      rgba(10, 10, 30, 0.88),
+      rgba(10, 10, 30, 0.52)
     );
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow:
-      0 24px 80px rgba(15, 23, 42, 0.45),
-      inset 0 1px 0 rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(18px);
+      0 32px 80px rgba(0, 0, 0, 0.65),
+      inset 0 1px 0 rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(24px);
   }
 
   .glass-card {
     background: linear-gradient(
       135deg,
-      rgba(30, 41, 59, 0.85),
-      rgba(15, 23, 42, 0.65)
+      rgba(20, 20, 55, 0.92),
+      rgba(10, 10, 30, 0.72)
     );
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow:
-      0 20px 60px rgba(15, 23, 42, 0.55),
+      0 24px 60px rgba(0, 0, 0, 0.55),
       inset 0 1px 0 rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(24px);
   }
 
   .neon-border {
-    box-shadow:
-      0 0 0 1px rgba(236, 72, 153, 0.25),
-      0 0 30px rgba(236, 72, 153, 0.15),
-      0 0 80px rgba(56, 189, 248, 0.15);
+    border: 1px solid rgba(236, 72, 153, 0.3);
+    animation: neon-pulse 4s ease-in-out infinite;
   }
 
   .tilt-wrap {
@@ -69,7 +98,7 @@
   .tilt-wrap:hover .tilt-card {
     transform: rotateY(-10deg) rotateX(6deg) translateY(-10px);
     box-shadow:
-      0 40px 90px rgba(15, 23, 42, 0.6),
+      0 40px 90px rgba(0, 0, 0, 0.6),
       0 0 80px rgba(236, 72, 153, 0.2);
   }
 
@@ -81,7 +110,7 @@
       140deg,
       rgba(236, 72, 153, 0.25),
       rgba(59, 130, 246, 0.15),
-      rgba(15, 23, 42, 0.05)
+      rgba(10, 10, 30, 0.05)
     );
     opacity: 0;
     transition: opacity 0.6s ease;
@@ -104,31 +133,48 @@
 @layer utilities {
   .bg-aurora {
     background-image:
-      radial-gradient(circle at top, rgba(236, 72, 153, 0.2), transparent 55%),
-      radial-gradient(circle at 20% 20%, rgba(56, 189, 248, 0.18), transparent 45%),
-      radial-gradient(circle at 80% 30%, rgba(251, 146, 60, 0.15), transparent 45%),
-      linear-gradient(180deg, #0b1120 0%, #0f172a 55%, #020617 100%);
+      radial-gradient(ellipse 80% 60% at 15% 0%, rgba(236, 72, 153, 0.28), transparent),
+      radial-gradient(ellipse 60% 50% at 85% 8%, rgba(56, 189, 248, 0.22), transparent),
+      radial-gradient(ellipse 70% 55% at 50% 90%, rgba(139, 92, 246, 0.14), transparent),
+      linear-gradient(180deg, #030310 0%, #07071a 45%, #03030f 100%);
+  }
+
+  .dot-grid {
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
+    background-size: 40px 40px;
   }
 
   .text-glow {
     text-shadow:
-      0 0 18px rgba(236, 72, 153, 0.55),
-      0 0 40px rgba(56, 189, 248, 0.35);
+      0 0 20px rgba(236, 72, 153, 0.65),
+      0 0 50px rgba(56, 189, 248, 0.4);
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, #f9a8d4 0%, #e879f9 45%, #a78bfa 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
   .orb {
     position: absolute;
     border-radius: 9999px;
-    filter: blur(0px);
-    opacity: 0.4;
+    filter: blur(80px);
     pointer-events: none;
+    animation: orb-float 12s ease-in-out infinite;
   }
 
   .orb--pink {
-    background: radial-gradient(circle, rgba(236, 72, 153, 0.75), transparent 65%);
+    background: radial-gradient(circle, rgba(236, 72, 153, 0.85), transparent 70%);
   }
 
   .orb--cyan {
-    background: radial-gradient(circle, rgba(56, 189, 248, 0.7), transparent 60%);
+    background: radial-gradient(circle, rgba(56, 189, 248, 0.75), transparent 70%);
+  }
+
+  .orb--purple {
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.75), transparent 70%);
+    animation-delay: -4s;
   }
 }

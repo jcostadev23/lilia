@@ -12,8 +12,8 @@ const unbounded = Unbounded({
 });
 
 export const metadata = {
-  title: "Lilia's Blog",
-  description: "Created by jcostadev23 ",
+  title: "Lilia Makeup | Artistry Studio",
+  description: "Portfólio de Lilia Dionísio — maquilhadora profissional. Arte, elegância e transformação.",
 };
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
