@@ -7,7 +7,7 @@ const allData = [
     details:
       "Desvende a beleza interior com um produto que vai além da superfície. Os detalhes são um testemunho de seu compromisso com qualidade e excelência.",
     image1: "/images/workpic/pic1.jpg",
-    image2: ["/images/workpic/pic1.1.jpg"],
+    image2: ["/images/workpic/pic1.jpg"],
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ const allData = [
     details:
       "Em cada contorno, celebre a arte da expressão. Nossos detalhes refletem a busca incessante pela perfeição. Descubra a magia de esculpir sua beleza única, onde cada produto é uma ferramenta na criação da sua própria obra-prima.",
     image1: "/images/workpic/pic2.jpg",
-    image2: ["/images/workpic/pic2.2.jpg"],
+    image2: ["/images/workpic/pic2.jpg"],
   },
   {
     id: 3,
@@ -43,7 +43,7 @@ const allData = [
     details:
       "Explore um mundo de cores que transcende o comum. Cada matiz conta uma história única, e nossa dedicação à qualidade se manifesta em cada detalhe. Descubra a verdadeira expressão da beleza, onde a arte encontra a excelência.",
     image1: "/images/workpic/pic4.jpg",
-    image2: ["/images/workpic/pic4.4.jpg"],
+    image2: ["/images/workpic/pic4.jpg"],
   },
   {
     id: 5,
@@ -53,7 +53,7 @@ const allData = [
     details:
       "Em cada traço, revelamos o poder da elegância. A atenção meticulosa aos detalhes é a essência da nossa coleção. Sinta-se envolvida pela sofisticação, onde cada produto conta uma história de beleza única.",
     image1: "/images/workpic/pic5.jpg",
-    image2: ["/images/workpic/pic5.5.jpg"],
+    image2: ["/images/workpic/pic5.jpg"],
   },
   // {
   //   id: 6,
